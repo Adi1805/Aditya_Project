@@ -40,9 +40,11 @@ VGG19 is loaded with ImageNet weights and frozen (.eval(), no gradient updates t
 LayerRoleWhyconv4_2ContentDeep enough to capture what is in the image (objects, layout), not exact pixel valuesconv1_1, conv2_1, conv3_1, conv4_1, conv5_1StyleA spread across shallow → deep layers, since style lives at multiple scales — brushstroke texture and broader color/pattern composition
 
 **3. Turn style into math with a Gram matrix.**
+
 Style isn't "what objects are present" — it's how features correlate with each other across the image, independent of their spatial position. The Gram matrix G = F·Fᵀ captures exactly that: which feature channels tend to activate together. Two images have the "same style" if their Gram matrices match.
 
 **4. Optimize the image, not the network.**
+
 This is the part that trips people up the first time you see it: the "trainable parameter" here isn't a set of weights — it's the pixels of the output image itself. Starting from a clone of the content image, gradients flow backward through VGG19 and directly update the pixel values, nudging them toward lower content + style loss on every step.
 
 **5. Weight style layers unevenly.**
