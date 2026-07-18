@@ -18,7 +18,7 @@ There's no dataset here, no training loop in the traditional sense, and no dedic
       <sub><b>Content Image</b></sub>
     </td>
     <td align="center">
-      <img src="style.jpg" width="260" height="260" style="object-fit: cover;"><br>
+      <img src="style.jpg" width="260" height="280" style="object-fit: cover;"><br>
       <sub><b>Style Image</b></sub>
     </td>
     <td align="center">
@@ -33,6 +33,7 @@ There's no dataset here, no training loop in the traditional sense, and no dedic
 The core idea, from Gatys, Ecker & Bethge's "A Neural Algorithm of Artistic Style" (2015), is deceptively simple once you break it down:
 
 **1. Borrow a pretrained CNN, but don't train it.**
+
 VGG19 is loaded with ImageNet weights and frozen (.eval(), no gradient updates to the network). We're not trying to improve the model — we're using its intermediate activations as a feature space that already understands edges, textures, and shapes.
 
 **2. Define "content" and "style" as different layers of the same network.**
