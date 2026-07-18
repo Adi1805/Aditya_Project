@@ -38,7 +38,10 @@ VGG19 is loaded with ImageNet weights and frozen (.eval(), no gradient updates t
 
 **2. Define "content" and "style" as different layers of the same network.**
 
-LayerRoleWhyconv4_2ContentDeep enough to capture what is in the image (objects, layout), not exact pixel valuesconv1_1, conv2_1, conv3_1, conv4_1, conv5_1StyleA spread across shallow → deep layers, since style lives at multiple scales — brushstroke texture and broader color/pattern composition
+| Layer | Role | Why |
+|---|---|---|
+| `conv4_2` | Content | Deep enough to capture *what* is in the image (objects, layout), not exact pixel values |
+| `conv1_1`, `conv2_1`, `conv3_1`, `conv4_1`, `conv5_1` | Style | A spread across shallow → deep layers, since style lives at multiple scales — brushstroke texture *and* broader color/pattern composition |
 
 **3. Turn style into math with a Gram matrix.**
 
@@ -49,4 +52,5 @@ Style isn't "what objects are present" — it's how features correlate with each
 This is the part that trips people up the first time you see it: the "trainable parameter" here isn't a set of weights — it's the pixels of the output image itself. Starting from a clone of the content image, gradients flow backward through VGG19 and directly update the pixel values, nudging them toward lower content + style loss on every step.
 
 **5. Weight style layers unevenly.**
+
 Earlier layers (conv1_1, conv2_1) get more weight than later ones (conv5_1) — early layers encode fine texture, and texture is what makes a stylized image actually look painterly rather than just recolored.
