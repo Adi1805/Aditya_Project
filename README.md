@@ -54,3 +54,10 @@ This is the part that trips people up the first time you see it: the "trainable 
 **5. Weight style layers unevenly.**
 
 Earlier layers (conv1_1, conv2_1) get more weight than later ones (conv5_1) — early layers encode fine texture, and texture is what makes a stylized image actually look painterly rather than just recolored.
+
+## **Tech Stack**
+
+- **PyTorch** — autograd for backpropagating loss all the way to pixel values
+- **torchvision** — pretrained VGG19 + image transforms
+- **PIL / Pillow** — image I/O
+- **Matplotlib** — visualization
