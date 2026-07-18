@@ -1,4 +1,4 @@
-Neural Style Transfer with PyTorch
+**Neural Style Transfer with PyTorch**
 
 Repaint any photograph in the brushstrokes of a painting you love — powered by a VGG19 network that was never trained to do this in the first place.
 
