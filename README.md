@@ -61,3 +61,9 @@ Earlier layers (conv1_1, conv2_1) get more weight than later ones (conv5_1) — 
 - **torchvision** — pretrained VGG19 + image transforms
 - **PIL / Pillow** — image I/O
 - **Matplotlib** — visualization
+
+## **References**
+
+Gatys, L. A., Ecker, A. S., & Bethge, M. (2015). *A Neural Algorithm of Artistic Style*. [arXiv:1508.06576](https://arxiv.org/abs/1508.06576)
+
+Zhang, S., Qi, Y., & Wu, J. (2025). *Applying deep learning for style transfer in digital art: enhancing creative expression through neural networks*. Scientific Reports, 15, 11744. [doi.org/10.1038/s41598-025-95819-9](https://doi.org/10.1038/s41598-025-95819-9)
